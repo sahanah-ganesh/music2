@@ -1,21 +1,55 @@
-let musicLibrary = {
-  name: name,
-  creator: creator,
-  playlists: [{ name: playlist1, { title: title,
-                                   rating: rating,
-                                   length: length  } },
-              { name: playlist2, { title: title,
-                                   rating: rating,
-                                   length: length, } }
-
-
+// let musicLibrary = {
+//   name: name,
+//   creator: creator,
+//   playlists: [
+//     {
+//       name: name,
+//       tracks: [
+//         {
+//           title: title,
+//           rating: rating,
+//           length: length
+//         },
+//         {
+//           title: title,
+//           rating: rating,
+//           length: length,
+//         }
+//       ],
+//       overallRating: fn(),
+//       totalDuration: fn()
+//     },
+//     {
+//       name: name,
+//       tracks: [
+//         {
+//           title: title,
+//           rating: rating,
+//           length: length
+//         },
+//         {
+//           title: title,
+//           rating: rating,
+//           length: length,
+//         }
+//       ],
+//       overallRating: fn(),
+//       totalDuration: fn()
+//     }
+//   ]
+// }
+//---------------------------------------------
 function Library(name, creator) {
   this.name = name;
   this.creator = creator;
+  this.playlists = [];
 }
 
 function Playlist(name) {
   this.name = name;
+  this.tracks = [];
+  this.overallRating = this.tracks.map((track) => {
+    reduce((a, b) => a + b) / rating;
 }
 
 function Track(title, rating, length) {
@@ -23,25 +57,43 @@ function Track(title, rating, length) {
   this.rating = rating;
   this.length = length;
 }
+//-----------------------------------------------
 
-let newLibrary = new Library('Reggae', 'Bob');
-console.log(newLibrary);
+let newLibrary = new Library('Oldies', 'John');
 
-let newPlaylist = new Playlist('Marley');
-console.log(newPlaylist);
+let playlist1 = new Playlist('Marley');
 
-let newTrack
+let track1 = new Track('Buffalo Soldier', '4', '180');
+let track2 = new Track('I shot the sheriff', '2', '140');
+let track3 = new Track('No woman no cry', '5', '160');
 
+let playlist2 = new Playlist('Queen');
+
+let track4 = new Track('Killer Queen', '1', '300');
+let track5 = new Track('Under Pressure', '5', '200');
+let track6 = new Track('We Will Rock You', '3', '400');
+
+playlist1.tracks.push(track1, track2, track3);
+playlist2.tracks.push(track4, track5, track6);
+
+newLibrary.playlists.push(playlist1, playlist2);
+
+// console.log(newLibrary);
+// console.log(playlist2.tracks);
+
+function rating() {
+  if (newPlaylist.playlists.tracks) {
+
+  }
+}
 
 
 // prototype functions:
-
 // Library
 // Playlist
 // Track
 
 // functionality:
-
 // A Library ONLY has a name and a creator(both strings)
 // Need name & creator to create a music library
 // A Library has many playlists(starts as an empty array)
